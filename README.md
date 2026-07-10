@@ -12,7 +12,7 @@
 
 ### Introduction
 
-This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using chessboard corner points, line images, and the mirror contour. The method follows the framework proposed by Deng et al., combining **Normalized Direct Linear Transform (DLT)** , **sphere projection**, **invariant theory**, and **radial distortion modeling**.
+This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour.
 
 ### Features
 
@@ -78,7 +78,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 ### 简介
 
-本仓库提供 MATLAB 代码，用于标定中央全向相机（折反射或透射式），利用棋盘格角点、直线图像和镜面轮廓。方法基于 Deng 等人的框架，结合了**归一化直接线性变换（DLT）**、**球面投影**、**不变量理论**和**径向畸变建模**。
+本仓库提供 MATLAB 代码，用于标定中央全向相机（折反射或透射式），利用棋盘格角点、直线图像和镜面轮廓。
 
 ### 功能特点
 
