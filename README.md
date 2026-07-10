@@ -1,75 +1,9 @@
-<h1 align="center">Central Omnidirectional Camera Calibration (COC)</h1>
+<h1 align="center">中心全景摄像机标定 Central Omnidirectional Camera Calibration (COC)</h1>
 
 <p align="center">
-  <a href="#-english">🇬🇧 English</a> •
-  <a href="#-chinese">🇨🇳 中文</a>
+  <a href="#-chinese">🇨🇳 中文</a> •
+  <a href="#-english">🇬🇧 English</a> 
 </p>
-
----
-
-<a id="-english"></a>
-## 🇬🇧 English
-
-### Introduction
-
-This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour.
-
-### Features
-
-- Estimate intrinsic parameters \( K \) (focal lengths, principal point, skew)
-- Estimate spherical projection parameter \( l \)
-- Estimate radial distortion coefficients (order 0–3)
-- Estimate extrinsic parameters (rotation \( R \) and translation \( t \)) for multiple views
-- Recover mirror parameter \( d_0 \) from the mirror contour
-- Compute reprojection errors for evaluation
-- Support both known and unknown \( l \) cases
-
-### File Structure
-
-| File | Description |
-|------|-------------|
-| `cali_main.m` | Main script that generates synthetic data (chessboard points, lines, mirror contour) and performs calibration |
-| `coc_cali.m` | Core calibration function that integrates point, line and contour constraints |
-| `fit_chessboard_line_image_fromcornerpoint.m` | Fits line images (conics) from detected corner points on each chessboard row/column |
-| `plot_est_coc_image.m` | Visualizes the estimated projection results with mirror contour, principal point, and reprojected points |
-
-> **Note:** Additional helper functions (e.g., `generate_cos_chessboard_image`, `generate_cos_world_point_image`, etc.) are used internally; they are expected to be present in the same directory.
-
-### Dependencies
-
-- MATLAB R2019b or later (tested with R2020a)
-- No additional toolboxes are strictly required (uses built-in functions like `svd`, `eig`, etc.)
-
-### Usage
-
-1. Open MATLAB and navigate to the project folder.
-2. Run the main script:
-   ```matlab
-   cali_main
-   ```
-   This will:
-   - Generate synthetic checkerboard world points and line samples.
-   - Simulate images under a central omnidirectional camera model (with configurable intrinsic parameters, pose, and distortion).
-   - Call the calibration routine `coc_cali` to recover all parameters.
-   - Plot the estimated images with reprojected points.
-
-3. To calibrate your own data, modify the input arguments to `coc_cali`:
-   - `world_point_image` : 3×N×M array of observed image points (homogeneous coordinates)
-   - `world_point`        : 4×N array of 3D world points (homogeneous coordinates)
-   - `line_image`         : 3×3×L×M array of line image conics (each 3×3 matrix)
-   - `mirror_contour`     : 3×3 conic representing the mirror contour
-   - `radial_distortion_order` : 0, 1, 2, or 3
-   - `l`                  : optional (if known, provide a scalar; otherwise leave empty)
-
-   See the function header in `coc_cali.m` for full details.
-
-### Citation
-
-If you use this code in your research, please cite the following work (to be added based on your reference).
-
-### License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -136,3 +70,69 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 ### 许可证
 
 本项目采用 MIT 许可证，详情请见 [LICENSE](LICENSE) 文件。
+
+---
+
+<a id="-english"></a>
+## 🇬🇧 English
+
+### Introduction
+
+This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour.
+
+### Features
+
+- Estimate intrinsic parameters \( K \) (focal lengths, principal point, skew)
+- Estimate spherical projection parameter \( l \)
+- Estimate radial distortion coefficients (order 0–3)
+- Estimate extrinsic parameters (rotation \( R \) and translation \( t \)) for multiple views
+- Recover mirror parameter \( d_0 \) from the mirror contour
+- Compute reprojection errors for evaluation
+- Support both known and unknown \( l \) cases
+
+### File Structure
+
+| File | Description |
+|------|-------------|
+| `cali_main.m` | Main script that generates synthetic data (chessboard points, lines, mirror contour) and performs calibration |
+| `coc_cali.m` | Core calibration function that integrates point, line and contour constraints |
+| `fit_chessboard_line_image_fromcornerpoint.m` | Fits line images (conics) from detected corner points on each chessboard row/column |
+| `plot_est_coc_image.m` | Visualizes the estimated projection results with mirror contour, principal point, and reprojected points |
+
+> **Note:** Additional helper functions (e.g., `generate_cos_chessboard_image`, `generate_cos_world_point_image`, etc.) are used internally; they are expected to be present in the same directory.
+
+### Dependencies
+
+- MATLAB R2019b or later (tested with R2020a)
+- No additional toolboxes are strictly required (uses built-in functions like `svd`, `eig`, etc.)
+
+### Usage
+
+1. Open MATLAB and navigate to the project folder.
+2. Run the main script:
+   ```matlab
+   cali_main
+   ```
+   This will:
+   - Generate synthetic checkerboard world points and line samples.
+   - Simulate images under a central omnidirectional camera model (with configurable intrinsic parameters, pose, and distortion).
+   - Call the calibration routine `coc_cali` to recover all parameters.
+   - Plot the estimated images with reprojected points.
+
+3. To calibrate your own data, modify the input arguments to `coc_cali`:
+   - `world_point_image` : 3×N×M array of observed image points (homogeneous coordinates)
+   - `world_point`        : 4×N array of 3D world points (homogeneous coordinates)
+   - `line_image`         : 3×3×L×M array of line image conics (each 3×3 matrix)
+   - `mirror_contour`     : 3×3 conic representing the mirror contour
+   - `radial_distortion_order` : 0, 1, 2, or 3
+   - `l`                  : optional (if known, provide a scalar; otherwise leave empty)
+
+   See the function header in `coc_cali.m` for full details.
+
+### Citation
+
+If you use this code in your research, please cite the following work (to be added based on your reference).
+
+### License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
