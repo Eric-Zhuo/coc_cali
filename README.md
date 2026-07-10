@@ -12,7 +12,7 @@
 
 ### 简介
 
-本仓库提供 MATLAB 代码，用于标定中央全向相机（折反射或透射式），利用棋盘格角点、直线图像和镜面轮廓。
+本仓库提供了用于标定中心全向相机（折反射式或透射式）的MATLAB代码，使用世界点、直线图像和镜面轮廓作为输入。该代码目前仅供同行评审使用，待论文接收后将正式开源。
 
 ### 功能特点
 
@@ -78,7 +78,7 @@
 
 ### Introduction
 
-This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour.
+This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour. The code is currently shared exclusively for the peer-review process and will be made publicly available upon the acceptance of the paper.
 
 ### Features
 
