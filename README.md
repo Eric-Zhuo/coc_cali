@@ -1,4 +1,4 @@
-<h1 align="center">中心全景摄像机标定 Central Omnidirectional Camera Calibration (COC)</h1>
+<h1 align="center">中心全景摄像机标定<br>Central Omnidirectional Camera Calibration (COC)</h1>
 
 <p align="center">
   <a href="#-chinese">🇨🇳 中文</a> •
