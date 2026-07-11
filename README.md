@@ -12,14 +12,14 @@
 
 ### 简介
 
-本仓库提供了用于标定中心全向相机（折反射式或透射式）的MATLAB代码，使用世界点、直线图像和镜面轮廓作为输入。该代码目前仅供同行评审使用，待论文接收后将正式开源。
+本仓库提供了用于标定中心全景摄像机（中心折反射摄像机或者鱼眼摄像机）的MATLAB代码，使用世界点、直线图像和镜面轮廓作为输入。该代码目前仅供同行评审使用，待论文接收后将正式开源。
 
 ### 功能特点
 
-- 估计内参矩阵 \( K \)（焦距、主点、倾斜因子）
+- 估计摄像机内参数 \( K \)
 - 估计球面投影参数 \( l \)
 - 估计径向畸变系数（阶数 0–3）
-- 估计多视图外参（旋转 \( R \) 和平移 \( t \)）
+- 估计外参数（旋转 \( R \) 和平移 \( t \)）
 - 从镜面轮廓恢复镜面参数 \( d_0 \)
 - 计算重投影误差以评估标定精度
 - 支持已知或未知 \( l \) 的情况
@@ -37,7 +37,7 @@
 
 ### 依赖环境
 
-- MATLAB R2019b 或更高版本（已在 R2020a 上测试）
+- MATLAB R2019b 或更高版本
 - 无需额外工具箱（使用内置函数如 `svd`、`eig` 等）
 
 ### 使用方法
@@ -49,7 +49,7 @@
    ```
    该脚本将：
    - 生成合成的棋盘格世界点和直线采样点。
-   - 在中央全向相机模型下模拟图像（可配置内参、位姿和畸变）。
+   - 在中心全景摄像机下模拟图像（可配置内参、位姿和畸变）。
    - 调用标定函数 `coc_cali` 恢复所有参数。
    - 绘制估计图像并显示重投影点。
 
@@ -78,14 +78,14 @@
 
 ### Introduction
 
-This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or dioptric) using world points, line images, and the mirror contour. The code is currently shared exclusively for the peer-review process and will be made publicly available upon the acceptance of the paper.
+This repository provides MATLAB code for calibrating central omnidirectional cameras (catadioptric or fisheye) using world points, line images, and the mirror contour. The code is currently shared exclusively for the peer-review process and will be made publicly available upon the acceptance of the paper.
 
 ### Features
 
-- Estimate intrinsic parameters \( K \) (focal lengths, principal point, skew)
+- Estimate intrinsic parameters \( K \)
 - Estimate spherical projection parameter \( l \)
 - Estimate radial distortion coefficients (order 0–3)
-- Estimate extrinsic parameters (rotation \( R \) and translation \( t \)) for multiple views
+- Estimate extrinsic parameters (rotation \( R \) and translation \( t \))
 - Recover mirror parameter \( d_0 \) from the mirror contour
 - Compute reprojection errors for evaluation
 - Support both known and unknown \( l \) cases
@@ -103,7 +103,7 @@ This repository provides MATLAB code for calibrating central omnidirectional cam
 
 ### Dependencies
 
-- MATLAB R2019b or later (tested with R2020a)
+- MATLAB R2019b or later
 - No additional toolboxes are strictly required (uses built-in functions like `svd`, `eig`, etc.)
 
 ### Usage
