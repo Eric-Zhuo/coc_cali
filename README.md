@@ -65,7 +65,21 @@
 
 ### 引用
 
-若您在研究中使用本代码，请引用以下工作（请根据实际参考文献补充）。
+若您在研究中使用本代码，请引用以下论文：
+
+Zhuo, Q. F., Zhao, Y., Li, C. Q., & Jiang, N., "Geometric calibration of central omnidirectional cameras under the unit-viewing sphere model", *Optics Express*.
+
+```bibtex
+@article{Zhuo2026,
+  author  = {Zhuo, Qing-Feng and Zhao, Yue and Li, Chao-Qian and Jiang, Nan},
+  title   = {Geometric calibration of central omnidirectional cameras under the unit-viewing sphere model},
+  journal = {Optics Express},
+  year    = {2026},
+# volume: 
+# issue: 
+# pages: 
+# doi: "10.1364/OE.XXXXXX"
+}
 
 ### 许可证
 
