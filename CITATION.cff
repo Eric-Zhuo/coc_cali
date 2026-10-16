@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the following paper."
-title: "Code for Full-Parameter Calibration of Central Omnidirectional Cameras under the Unit-Viewing Sphere Model"
+title: "Code for Geometric calibration of central omnidirectional cameras under the unit-viewing sphere model"
 authors:
   - family-names: "Zhuo"
     given-names: "Qing-Feng"
@@ -16,7 +16,7 @@ url: "https://github.com/Eric-Zhuo/coc_cali"
 
 preferred-citation:
   type: article
-  title: "Full-Parameter Calibration of Central Omnidirectional Cameras under the Unit-Viewing Sphere Model"
+  title: "Geometric calibration of central omnidirectional cameras under the unit-viewing sphere model"
   authors:
     - family-names: "Zhuo"
       given-names: "Qing-Feng"
